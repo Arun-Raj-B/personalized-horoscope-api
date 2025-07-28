@@ -2,9 +2,9 @@
   "name": "personalized-horoscope-api",
   "version": "1.0.0",
   "main": "index.js",
-"scripts": {
-  "start": "node --watch app.js"
-},
+  "scripts": {
+    "start": "node --watch app.js"
+  },
   
   "repository": {
     "type": "git",
