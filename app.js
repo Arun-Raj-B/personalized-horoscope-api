@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const { sequelize } = require('./models');
 const authRoutes = require('./routes/user.routes');
 const horoscopeRoutes = require('./routes/horoscope.routes');
+const { swaggerSpec,swaggerUi } = require('./swagger');
 
 dotenv.config();
 
@@ -15,13 +16,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 /** Routes */
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
 app.use('/auth', authRoutes);
 app.use('/horoscope', horoscopeRoutes);
-
-/** Test api */
-app.get('/', (req, res) => {
-  res.send('Personalized Horoscope API is running');
-});
 
 /** Test DB Connection and Create server */
 sequelize
