@@ -2,7 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const { sequelize } = require('./models');
 const authRoutes = require('./routes/user.routes');
-// const horoscopeRoutes = require('./routes/horoscope.routes');
+const horoscopeRoutes = require('./routes/horoscope.routes');
 
 dotenv.config();
 
@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 
 /** Routes */
 app.use('/auth', authRoutes);
-// app.use('/horoscope', horoscopeRoutes);
+app.use('/horoscope', horoscopeRoutes);
 
 /** Test api */
 app.get('/', (req, res) => {
