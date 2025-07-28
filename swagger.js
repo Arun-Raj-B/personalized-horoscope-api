@@ -8,16 +8,20 @@ const swaggerDefinition = {
     version: '1.0.0',
     description: 'API documentation for the Personalized Horoscope project',
   },
-  servers: [
-    {
-      url: 'http://localhost:3000',
-    },
-  ],
+   components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: 'http',
+          scheme: 'bearer',
+          bearerFormat: 'JWT',
+        },
+      },
+    }
 };
 
 const options = {
   swaggerDefinition,
-  apis: ['./routes/*.js'], 
+  apis: ['./routes/*.js'],
 };
 
 const swaggerSpec = swaggerJSDoc(options);
