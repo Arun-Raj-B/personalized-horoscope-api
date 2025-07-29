@@ -66,41 +66,53 @@ To get this project running locally:
 ## 🧠 Design Decisions
 
 ✅ **User authentication (Signup & Login) using JWT**  
+
 Stateless JWT tokens are used for secure, scalable authentication.
 
-🔐 **Passwords hashed with bcrypt**  
+🔐 **Passwords hashed with bcrypt** 
+
 Ensures that user passwords are securely stored and never saved in plain text.
 
 ♈ **Zodiac sign auto-detected from birthdate**  
+
 Reduces user input and avoids errors by automatically determining zodiac based on DOB.
 
 📆 **Get daily or historical horoscopes**  
+
 Flexible endpoints allow fetching today's or past dates’ horoscopes for any user.
 
 📊 **Swagger (OpenAPI) documentation**  
+
 Built-in Swagger UI for live API documentation and easy testing.
 
-⚙️ **PostgreSQL integration with Sequelize ORM**  
+⚙️ **PostgreSQL integration with Sequelize ORM** 
+
 Robust SQL database with Sequelize for model definitions and query abstraction.
 
 🛡️ **Rate limiting middleware for protection**  
+
 Protects against brute-force attacks and abuse using express-rate-limit.
 
-🧪 **Input validation with express-validator**  
+🧪 **Input validation with express-validator** 
+
 All incoming data is validated for correctness, reducing bugs and bad data.
 
 ## 🛠️ Improvements with More Time
 
 🔁 **Redis Caching for Horoscope Fetches**  
+
 To reduce database hits for frequently requested horoscopes (e.g., daily zodiac data).
 
 📬 **Daily Horoscope Notifications**  
+
 Send automated daily horoscopes via email or push notifications using job schedulers (like node-cron) and services like SendGrid.
 
 📱 **OAuth Integration**  
+
 Allow users to log in with Google or other accounts, improving user experience and trust.
 
 📤 **Export Horoscope History**  
+
 Let users download or export their historical horoscopes in PDF/CSV formats.
 
 ## ⚖️ Scalability for Personalized Horoscopes
