@@ -110,15 +110,19 @@ Currently, the system provides one horoscope per zodiac sign per day — i.e., 1
 If the system evolves to serve **fully personalized horoscopes per user**, it must scale to handle:
 
 📈 **Massive Data Generation**
+
 Personalized content would be dynamically generated (e.g., per user per day), drastically increasing processing requirements.
 
 ⚙️ **Compute Scaling**
+
 Use background jobs and scalable workers (e.g., via Bull with Redis or queues) to generate horoscopes asynchronously.
 
 ⚡ **Caching Layer**
+
 Use Redis or in-memory caching to store and serve already generated horoscopes quickly.
 
 🧠 **AI Integration**
+
 For truly personalized content, integrate with astrology engines.
 
 
